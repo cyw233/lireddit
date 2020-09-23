@@ -5,7 +5,8 @@ import { Post } from '../entities/Post';
 @Resolver()
 export class PostResolver {
   @Query(() => [Post])
-  posts(@Ctx() { em }: MyContext): Promise<Post[]> {
+  async posts(@Ctx() { em }: MyContext): Promise<Post[]> {
+    // await sleep(1000);
     return em.find(Post, {});
   }
 
