@@ -19,3 +19,6 @@ export class Updoot extends BaseEntity {
   @ManyToOne(() => Post, (post) => post.updoots)
   post: Post;
 }
+
+// A table can ONLY have one Primary Key, but it can have multiple Primary Columns to
+// form a Composite Primary Key, e.g., Updoot has the primary key (userId, postId)
