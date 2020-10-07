@@ -15,16 +15,16 @@ import { User } from './entities/User';
 import { HelloResolver } from './resolvers/hello';
 import { PostResolver } from './resolvers/post';
 import { UserResolver } from './resolvers/user';
+import { createUpdootLoader } from './utils/createUpdootLoader';
 import { createUserLoader } from './utils/createUserLoader';
+import 'dotenv-safe/config';
 
 const main = async () => {
   const conn = await createConnection({
     type: 'postgres',
-    database: 'lireddit2',
-    username: 'colin233',
-    password: 'WANGcy888',
+    url: process.env.DATABASE_URL,
     logging: true,
-    synchronize: true,
+    // synchronize: true,
     migrations: [path.join(__dirname, './migrations/*')],
     entities: [Post, User, Updoot],
   });
@@ -35,11 +35,13 @@ const main = async () => {
   const app = express();
 
   const RedisStore = connectRedis(session);
-  const redis = new Redis();
+  const redis = new Redis(process.env.REDIS_URL);
+
+  app.set('proxy', 1);
 
   app.use(
     cors({
-      origin: 'http://localhost:3000',
+      origin: process.env.CORS_ORIGIN,
       credentials: true,
     })
   );
@@ -52,10 +54,11 @@ const main = async () => {
         maxAge: 1000 * 60 * 60 * 24 * 365 * 10, // 10 years
         httpOnly: true,
         sameSite: 'lax', // csrf
-        secure: __prod__,
+        secure: __prod__, // cookie only works in https
+        domain: __prod__ ? '.codeponder.com' : undefined,
       },
       saveUninitialized: false,
-      secret: 'qwertyuio2dww',
+      secret: process.env.SESSION_SECRET,
       resave: false,
     })
   );
@@ -70,6 +73,7 @@ const main = async () => {
       res,
       redis,
       userLoader: createUserLoader(),
+      updootLoader: createUpdootLoader(),
     }),
   });
 
@@ -78,7 +82,7 @@ const main = async () => {
     cors: false,
   });
 
-  app.listen(4000, () => {
+  app.listen(parseInt(process.env.PORT), () => {
     console.log('server started on localhost:4000');
   });
 };
