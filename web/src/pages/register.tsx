@@ -13,13 +13,13 @@ interface RegisterProps {}
 
 export const Register: React.FC<RegisterProps> = ({}) => {
   const router = useRouter();
-  const [, register] = useRegisterMutation();
+  const [register] = useRegisterMutation();
   return (
     <Wrapper variant="small">
       <Formik
         initialValues={{ username: '', email: '', password: '' }}
         onSubmit={async (values, { setErrors }) => {
-          const response = await register({ options: values });
+          const response = await register({ variables: { options: values } });
           if (response.data?.register.errors) {
             setErrors(toErrorMap(response.data.register.errors));
           } else if (response.data?.register.user) {
@@ -64,4 +64,4 @@ export const Register: React.FC<RegisterProps> = ({}) => {
   );
 };
 
-export default withUrqlClient(createUrqlClent)(Register);
+export default Register;

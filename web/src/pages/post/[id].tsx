@@ -6,9 +6,9 @@ import { createUrqlClent } from '../../utils/createUrqlClient';
 import { useGetPostFromUrl } from '../../utils/useGetPostFromUrl';
 
 const Post = ({}) => {
-  const [{ data, error, fetching }] = useGetPostFromUrl();
+  const { data, error, loading } = useGetPostFromUrl();
 
-  if (fetching) {
+  if (loading) {
     return (
       <Layout>
         <div>Loading...</div>
@@ -40,4 +40,4 @@ const Post = ({}) => {
   );
 };
 
-export default withUrqlClient(createUrqlClent, { ssr: true })(Post);
+export default Post;
