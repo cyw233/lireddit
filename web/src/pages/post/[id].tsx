@@ -4,6 +4,7 @@ import EditDeletePostButtons from '../../components/EditDeletePostButtons';
 import { Layout } from '../../components/Layout';
 import { createUrqlClent } from '../../utils/createUrqlClient';
 import { useGetPostFromUrl } from '../../utils/useGetPostFromUrl';
+import { withApollo } from '../../utils/withApollo';
 
 const Post = ({}) => {
   const { data, error, loading } = useGetPostFromUrl();
@@ -40,4 +41,4 @@ const Post = ({}) => {
   );
 };
 
-export default Post;
+export default withApollo({ssr: true})(Post);
