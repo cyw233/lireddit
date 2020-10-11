@@ -1,11 +1,11 @@
 import { Box, Button, FormControl } from '@chakra-ui/core';
 import { Form, Formik } from 'formik';
-import { withUrqlClient } from 'next-urql';
+// import { withUrqlClient } from 'next-urql';
 import React, { useState } from 'react';
 import { InputField } from '../components/InputField';
 import { Wrapper } from '../components/Wrapper';
 import { useForgotPasswordMutation } from '../generated/graphql';
-import { createUrqlClent } from '../utils/createUrqlClient';
+// import { createUrqlClent } from '../utils/createUrqlClient';
 import { withApollo } from '../utils/withApollo';
 
 const ForgotPassword: React.FC<{}> = ({}) => {
@@ -54,4 +54,4 @@ const ForgotPassword: React.FC<{}> = ({}) => {
   );
 };
 
-export default withApollo({ssr: false})(ForgotPassword);
+export default withApollo({ ssr: false })(ForgotPassword);

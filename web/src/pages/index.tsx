@@ -1,12 +1,12 @@
 import { Box, Button, Flex, Heading, Link, Stack, Text } from '@chakra-ui/core';
-import { withUrqlClient } from 'next-urql';
+// import { withUrqlClient } from 'next-urql';
 import NextLink from 'next/link';
-import { useState } from 'react';
+// import { useState } from 'react';
 import EditDeletePostButtons from '../components/EditDeletePostButtons';
 import { Layout } from '../components/Layout';
 import UpdootSection from '../components/UpdootSection';
-import { PostsQuery, usePostsQuery } from '../generated/graphql';
-import { createUrqlClent } from '../utils/createUrqlClient';
+import { usePostsQuery } from '../generated/graphql';
+// import { createUrqlClent } from '../utils/createUrqlClient';
 import { withApollo } from '../utils/withApollo';
 
 const Index = () => {
@@ -105,4 +105,4 @@ const Index = () => {
   );
 };
 
-export default withApollo({ssr: true})(Index);
+export default withApollo({ ssr: true })(Index);

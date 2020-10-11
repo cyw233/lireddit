@@ -1,12 +1,12 @@
 import { Box, Button, FormControl } from '@chakra-ui/core';
 import { Form, Formik } from 'formik';
-import { withUrqlClient } from 'next-urql';
+// import { withUrqlClient } from 'next-urql';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { InputField } from '../components/InputField';
 import { Wrapper } from '../components/Wrapper';
 import { MeDocument, MeQuery, useRegisterMutation } from '../generated/graphql';
-import { createUrqlClent } from '../utils/createUrqlClient';
+// import { createUrqlClent } from '../utils/createUrqlClient';
 import { toErrorMap } from '../utils/toErrorMap';
 import { withApollo } from '../utils/withApollo';
 

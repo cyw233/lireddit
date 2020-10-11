@@ -1,7 +1,7 @@
 import { Box, Button, Flex, FormControl, Link } from '@chakra-ui/core';
 import { Form, Formik } from 'formik';
 import { NextPage } from 'next';
-import { withUrqlClient } from 'next-urql';
+// import { withUrqlClient } from 'next-urql';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
@@ -12,7 +12,7 @@ import {
   MeQuery,
   useChangePasswordMutation,
 } from '../../generated/graphql';
-import { createUrqlClent } from '../../utils/createUrqlClient';
+// import { createUrqlClent } from '../../utils/createUrqlClient';
 import { toErrorMap } from '../../utils/toErrorMap';
 import { withApollo } from '../../utils/withApollo';
 

@@ -1,6 +1,6 @@
 import { Box, Button, FormControl } from '@chakra-ui/core';
 import { Form, Formik } from 'formik';
-import { withUrqlClient } from 'next-urql';
+// import { withUrqlClient } from 'next-urql';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { InputField } from '../../../components/InputField';
@@ -9,7 +9,7 @@ import {
   usePostQuery,
   useUpdatePostMutation,
 } from '../../../generated/graphql';
-import { createUrqlClent } from '../../../utils/createUrqlClient';
+// import { createUrqlClent } from '../../../utils/createUrqlClient';
 import { useGetIntId } from '../../../utils/useGetIntId';
 import { withApollo } from '../../../utils/withApollo';
 
@@ -77,4 +77,4 @@ const EditPost = ({}) => {
   );
 };
 
-export default withApollo({ssr: false})(EditPost);
+export default withApollo({ ssr: false })(EditPost);

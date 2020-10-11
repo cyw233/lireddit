@@ -1,8 +1,8 @@
 import { Heading, Box } from '@chakra-ui/core';
-import { withUrqlClient } from 'next-urql';
+// import { withUrqlClient } from 'next-urql';
 import EditDeletePostButtons from '../../components/EditDeletePostButtons';
 import { Layout } from '../../components/Layout';
-import { createUrqlClent } from '../../utils/createUrqlClient';
+// import { createUrqlClent } from '../../utils/createUrqlClient';
 import { useGetPostFromUrl } from '../../utils/useGetPostFromUrl';
 import { withApollo } from '../../utils/withApollo';
 
@@ -41,4 +41,4 @@ const Post = ({}) => {
   );
 };
 
-export default withApollo({ssr: true})(Post);
+export default withApollo({ ssr: true })(Post);
