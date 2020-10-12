@@ -40,7 +40,7 @@
 
 ![Lireddit screenshot](https://i.ibb.co/rFGWhFS/Screen-Shot-2020-10-12-at-10-13-38-am.png)
 
-To keep updating my current web development skills, I decided to develop this full-stack web application to continue to learn and grow my skills using some cutting-edge technologies. This application allows users to authenticate, create a post, update their posts, upvote or downvote a post etc. Server-side rendering and caching have enabled in this application.
+To keep updating my current web development skills, I decided to develop this full-stack web application to continue to learn and grow my skills using some cutting-edge technologies. This application allows users to authenticate, create a post, update their posts, upvote or downvote a post etc. Server-side rendering and caching have been enabled in this application.
 
 
 ### Built With
@@ -66,7 +66,6 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
 ```sh
 npm install npm@latest -g
@@ -77,6 +76,9 @@ npm install npm@latest -g
 ```
 npm install -g typescript
 ```
+
+- PostgreSQL
+- Redis
 
 ### Installation
 
