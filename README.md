@@ -152,4 +152,4 @@ Chenyang Wang - chenyangw233@gmail.com
 [license-shield]: https://img.shields.io/github/license/cyw233/lireddit.svg?style=flat-square
 [license-url]: https://github.com/cyw233/lireddit/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://https://www.linkedin.com/in/cyw233/
+[linkedin-url]: https://www.linkedin.com/in/cyw233/
